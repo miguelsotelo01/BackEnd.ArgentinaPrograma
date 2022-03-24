@@ -1,0 +1,4 @@
+en el modelo crear las  clases como los tablas de la base de datos
+o sea una clase por cada tabla con su respectiva anotacion de entity y table
+
+https://github.com/AgustinEL/Springboot.git
