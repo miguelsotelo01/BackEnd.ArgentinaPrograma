@@ -17,23 +17,8 @@ public class Persona implements Serializable {
     private LocalDate cumpleaños;
     private String backImg;
     private String profileImg;
-    @Column(nullable = false, updatable =false)
-    private String codigoUsuario;
 
     public Persona() {
-    }
-
-    public Persona(Long id, String nombre, String ocupacion, String email, String lugar, String telefono, LocalDate cumpleaños, String backImg, String profileImg, String codigoUsuario) {
-        this.id = id;
-        this.nombre = nombre;
-        this.ocupacion = ocupacion;
-        this.email = email;
-        this.lugar = lugar;
-        this.telefono = telefono;
-        this.cumpleaños = cumpleaños;
-        this.backImg = backImg;
-        this.profileImg = profileImg;
-        this.codigoUsuario = codigoUsuario;
     }
 
     public Long getId() {
@@ -108,14 +93,6 @@ public class Persona implements Serializable {
         this.profileImg = profileImg;
     }
 
-    public String getCodigoUsuario() {
-        return codigoUsuario;
-    }
-
-    public void setCodigoUsuario(String codigoUsuario) {
-        this.codigoUsuario = codigoUsuario;
-    }
-
     @Override
     public String toString() {
         return "Persona{" +
@@ -128,7 +105,6 @@ public class Persona implements Serializable {
                 ", cumpleaños=" + cumpleaños +
                 ", backImg='" + backImg + '\'' +
                 ", profileImg='" + profileImg + '\'' +
-                ", codigoUsuario='" + codigoUsuario + '\'' +
                 '}';
     }
 }

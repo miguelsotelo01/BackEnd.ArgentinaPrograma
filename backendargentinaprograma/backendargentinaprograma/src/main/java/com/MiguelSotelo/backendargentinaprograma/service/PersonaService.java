@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class PersonaService {
@@ -18,7 +17,6 @@ public class PersonaService {
         this.personaRepo = personaRepo;
     }
     public Persona addPersona(Persona persona) {
-        persona.setCodigoUsuario(UUID.randomUUID().toString());
         return personaRepo.save(persona);
     }
 
