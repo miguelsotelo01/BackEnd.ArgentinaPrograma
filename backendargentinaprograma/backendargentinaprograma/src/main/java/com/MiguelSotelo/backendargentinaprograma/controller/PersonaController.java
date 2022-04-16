@@ -4,6 +4,7 @@ import com.MiguelSotelo.backendargentinaprograma.model.Persona;
 import com.MiguelSotelo.backendargentinaprograma.service.PersonaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,23 +30,22 @@ public class PersonaController {
         Persona persona=personaService.findPersonaById(id);
         return new ResponseEntity<>(persona, HttpStatus.OK);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/add")
     public ResponseEntity<Persona>addPersona(@RequestBody Persona persona){
         Persona newPersona=personaService.addPersona(persona);
         return new ResponseEntity<>(persona, HttpStatus.CREATED);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update")
     public ResponseEntity<Persona> updatePersona (@RequestBody Persona persona) {
         Persona updatePersona = personaService.updatePersona(persona);
         return new ResponseEntity<>(updatePersona, HttpStatus.OK);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?>deletePersona(@PathVariable ("id") int id){
+    public ResponseEntity<?>deletePersona(@PathVariable ("id") Long id){
         personaService.deletePersona(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-
-
-
 }

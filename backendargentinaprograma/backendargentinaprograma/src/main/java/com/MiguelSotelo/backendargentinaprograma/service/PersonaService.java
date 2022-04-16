@@ -17,14 +17,17 @@ public class PersonaService {
         this.personaRepo = personaRepo;
     }
     public Persona addPersona(Persona persona) {
+
         return personaRepo.save(persona);
     }
 
     public List<Persona> findAllPersonas() {
+
         return personaRepo.findAll();
     }
 
     public Persona updatePersona(Persona persona) {
+
         return personaRepo.save(persona);
     }
 
@@ -33,7 +36,8 @@ public class PersonaService {
                 .orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
     }
 
-    public void deletePersona(int id){
+    public void deletePersona(Long id){
+
         personaRepo.deletePersonaById(id);
     }
 }

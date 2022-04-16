@@ -17,6 +17,7 @@ public class Persona implements Serializable {
     private LocalDate cumpleaños;
     private String backImg;
     private String profileImg;
+    private String AcercaDe;
 
     public Persona() {
     }
@@ -93,6 +94,14 @@ public class Persona implements Serializable {
         this.profileImg = profileImg;
     }
 
+    public String getAcercaDe() {
+        return AcercaDe;
+    }
+
+    public void setAcercaDe(String acercaDe) {
+        AcercaDe = acercaDe;
+    }
+
     @Override
     public String toString() {
         return "Persona{" +
@@ -105,6 +114,7 @@ public class Persona implements Serializable {
                 ", cumpleaños=" + cumpleaños +
                 ", backImg='" + backImg + '\'' +
                 ", profileImg='" + profileImg + '\'' +
+                ", AcercaDe='" + AcercaDe + '\'' +
                 '}';
     }
 }
